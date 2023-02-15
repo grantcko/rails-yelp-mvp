@@ -1,0 +1,16 @@
+<div class="container mt-3">
+  <h1><%= @restaurant.name%></h1>
+  <p><%= @restaurant.category %></p>
+  <p><%= @restaurant.phone_number %></p>
+  <p><%= @restaurant.address %></p>
+  <p><%= link_to 'Add review', new_restaurant_review_path(params[:id]) %></p>
+  <p><%= link_to 'Back', restaurants_path %></p>
+  <h2>REVIEWS</h2>
+  <% reviews = @restaurant.reviews %>
+  <ul>
+    <% reviews.each do |review| %>
+      <li><strong>RATING: <%= review.rating %>/5</strong><p><%= review.content %></p></li>
+    <% end %>
+  </ul>
+
+</div>
